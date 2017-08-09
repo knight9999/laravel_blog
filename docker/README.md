@@ -64,6 +64,15 @@ $ su - laravel
   で生成した値を使います。
 
 
+### Restart
+
+次のコマンドを実行します。
+
+```
+# service apache2 restart
+```
+
+
 
 
 ### Other Reference
