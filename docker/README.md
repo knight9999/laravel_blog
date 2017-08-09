@@ -19,7 +19,7 @@ $ docker run --privileged -p 8022:22 -p 8080:80 -v `pwd`/..:/home/laravel/work/ 
 ```
 
 laravelユーザーが自動的に作られます。
-またローカルのworkディレクトリが、Dockerのlaravelユーザーのworkディレクトリにマウントされます。
+またローカルの親ディレクトリ(..)が、Dockerのlaravelユーザーのworkディレクトリにマウントされます。
 
 git管理などは、ローカルのworkから行うことにします。
 
@@ -52,7 +52,6 @@ $ su - laravel
 
 ### Second Time
 
-1. ホストPCから、workディレクトリに、Laravel Projectをclonseします
 1. 次に、ゲストPCでlaravelユーザーになり、`$ composer install`を実行します。
 1. Apacheの000-default.confの設定で、Document Rootの設定を適時修正します。
 1. .env.exampleをコピーして、.envにします。そして、API_KEYに値を設定します。
