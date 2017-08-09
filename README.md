@@ -52,3 +52,7 @@ php artisan make:migration create_users_table --create=users
 ```
 php artisan migrate
 ```
+
+### 参考サイト
+
+https://owani.net/php/laravel-eloquent/613/
