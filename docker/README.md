@@ -15,13 +15,23 @@ $ docker build -t ubuntu_with_laravel_blog .
 以下のコマンドで、Dockerコンテナを起動します。
 
 ```
-$ docker run --privileged -p 8022:22 -p 8080:80 -v `pwd`/..:/home/laravel/work/ -it ubuntu_with_laravel_blog
+$ docker run --privileged -p 8022:22 -p 8080:80 -v `pwd`/..:/home/laravel/work/blog -it ubuntu_with_laravel_blog
 ```
 
 laravelユーザーが自動的に作られます。
 またローカルのworkディレクトリが、Dockerのlaravelユーザーのworkディレクトリにマウントされます。
 
 git管理などは、ローカルのworkから行うことにします。
+
+### Remark
+
+curlでcomposerがうまくインストールできていない場合があるので、その時は、
+
+```
+# curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+```
+
+を手動で実行します。
 
 ### Laravel
 
@@ -52,7 +62,7 @@ $ su - laravel
 
 ### Second Time
 
-1. ホストPCから、workディレクトリに、Laravel Projectをclonseします
+1. ホストPCから、workディレクトリに、Laravel Projectをcloneします(本プロジェクトは、すでにcloneしているので不要)
 1. 次に、ゲストPCでlaravelユーザーになり、`$ composer install`を実行します。
 1. Apacheの000-default.confの設定で、Document Rootの設定を適時修正します。
 1. .env.exampleをコピーして、.envにします。そして、API_KEYに値を設定します。
