@@ -22,9 +22,12 @@ RUN apt-get install -y postfix
 
 RUN apt-get install -y vim
 
-RUN apt-get install -y php libapache2-mod-php php-mcrypt php-zip php-mbstring php-xml phpunit
+RUN apt-get install -y php libapache2-mod-php php-mcrypt php-zip php-mbstring php-xml phpunit php-mysql
 
 RUN apt-get install -y zip unzip
+
+RUN a2enmod rewrite
+
 RUN phpenmod mcrypt
 
 RUN apt-get install -y curl

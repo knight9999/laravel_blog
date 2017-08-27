@@ -19,7 +19,7 @@ $ docker run --privileged -p 8022:22 -p 8080:80 -v `pwd`/..:/home/laravel/work/b
 ```
 
 laravelユーザーが自動的に作られます。
-またローカルのworkディレクトリが、Dockerのlaravelユーザーのworkディレクトリにマウントされます。
+またローカルの親ディレクトリ(..)が、Dockerのlaravelユーザーのworkディレクトリにマウントされます。
 
 git管理などは、ローカルのworkから行うことにします。
 
@@ -73,6 +73,15 @@ $ su - laravel
   ```
 
   で生成した値を使います。
+
+
+### Restart
+
+次のコマンドを実行します。
+
+```
+# service apache2 restart
+```
 
 
 
